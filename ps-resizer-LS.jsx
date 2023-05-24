@@ -34,6 +34,8 @@ var imageRatio;
 var cropType;
 var matchAll;
 var bordersMatch;
+var testMaxH;
+var testMaxW;
 
 const LANDSCAPE = "ASPECT_LANDSCAPE";
 const PORTRAIT = "ASPECT_PORTRAIT";
@@ -483,13 +485,13 @@ function getValuesAndSetVars() {
                 break;
         }
 
-        maxHmm = paperHmm - (2 * bordersMatch);
-        maxWmm = paperWmm - (2 * bordersMatch);
+        testMaxH = paperHmm - (2 * bordersMatch);
+        testMaxW = paperWmm - (2 * bordersMatch);
 
-        if (maxHmm <= 0 ||
-            maxWmm <= 0 ||
-            maxHmm > paperHmm ||
-            maxWmm > paperWmm) {
+        if (testMaxH <= 0 ||
+            testMaxW <= 0 ||
+            testMaxH > paperHmm ||
+            testMaxW > paperWmm) {
                 pnlAll.enabled = false;
             }
     }
